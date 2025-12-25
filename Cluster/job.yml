@@ -1,0 +1,14 @@
+kind: Job
+apiVersion: batch/v1
+
+metadata:
+  name: job-pod
+  namespace: nginx-ns
+spec:
+  template:
+    spec:
+      containers:
+      - name: job-cont
+        image: busybox
+        command: ["echo", "One-time job comlpleted"]
+      restartPolicy: OnFailure

@@ -1,0 +1,17 @@
+kind: CronJob
+apiVersion: batch/v1
+
+metadata:
+  name: cronjob
+  namespace: nginx-ns
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: cron-cont
+            image: busybox
+            command: ["echo", "This job will run Every-Minute"]
+          restartPolicy: OnFailure
