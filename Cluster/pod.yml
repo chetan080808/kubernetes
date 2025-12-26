@@ -2,11 +2,11 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: nginx-pod
-  namespace: deployment-ns
-  specs:
-    containers:
-      - name: nginx
-        image: nginx:latest
-        ports:
-          - containerPort: 80
+  namespace: nginx-ns
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
+      ports:
+        - containerPort: 80
   
